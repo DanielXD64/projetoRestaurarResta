@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Massa - KDS Cozinha</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        /* Ajuste específico para Cozinha: Fundo Escuro */
+        body { background-color: #121212; color: white; }
+        .navbar-bella-massa { background-color: #333; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-bella-massa">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-hat-chef me-2"></i>PAINEL DA COZINHA (KDS)
+            </a>
+            <span id="relogio" class="text-white fs-5"></span>
+        </div>
+    </nav>
+
+    <div class="container-fluid my-4">
+        <div class="row" id="lista-pedidos">
+            <!-- Os cards serão inseridos aqui pelo JS -->
+        </div>
+    </div>
+
+    <script src="js/pizzaiolo.js"></script>
+    <script>
+        // Relógio Simples
+        setInterval(() => {
+            document.getElementById('relogio').innerText = new Date().toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+</html>

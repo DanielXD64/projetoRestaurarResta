@@ -1,0 +1,83 @@
+/* Importação de Fontes Profissionais do Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    /* Paleta Bella Massa - Sofisticada */
+    --bs-primary: #C8102E;    /* Vermelho Pomodoro Profundo */
+    --bs-success: #008C45;    /* Verde Manjericão Clássico */
+    --bs-secondary: #F4EBD0;  /* Creme Muçarela/Farinha */
+    --bs-dark: #1A1A1A;       /* Fundo Quase Preto */
+    --bs-body-bg: #F8F9FA;    /* Fundo Claro para Leitura */
+    
+    /* Fontes */
+    --font-titulo: 'Playfair Display', serif;
+    --font-corpo: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-corpo);
+    background-color: var(--bs-body-bg);
+}
+
+/* Títulos Artesanais */
+h1, h2, h3, .navbar-brand {
+    font-family: var(--font-titulo);
+    font-weight: 700;
+}
+
+/* Navbar Customizada */
+.navbar-bella-massa {
+    background-color: var(--bs-primary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-bella-massa .navbar-brand,
+.navbar-bella-massa .nav-link {
+    color: white !important;
+}
+
+/* Cards Premium */
+.card-bella {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden; /* Para a borda lateral */
+}
+
+.card-bella:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* Bordas Laterais Temáticas no Card */
+.card-pedido-pendente { border-left: 5px solid var(--bs-warning); }
+.card-pedido-forno { border-left: 5px solid var(--bs-primary); }
+.card-pedido-pronto { border-left: 5px solid var(--bs-success); }
+
+/* Botões Customizados */
+.btn-bella {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.btn-primary { background-color: var(--bs-primary); border-color: var(--bs-primary); }
+.btn-success { background-color: var(--bs-success); border-color: var(--bs-success); }
+
+/* Badges de Status Modernos */
+.badge-status {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* Ícones Grandes */
+.icon-status {
+    font-size: 2rem;
+    margin-right: 15px;
+}
