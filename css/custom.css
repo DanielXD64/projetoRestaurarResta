@@ -1,83 +1,222 @@
-/* Importação de Fontes Profissionais do Google */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Paleta Bella Massa - Sofisticada */
-    --bs-primary: #C8102E;    /* Vermelho Pomodoro Profundo */
-    --bs-success: #008C45;    /* Verde Manjericão Clássico */
-    --bs-secondary: #F4EBD0;  /* Creme Muçarela/Farinha */
-    --bs-dark: #1A1A1A;       /* Fundo Quase Preto */
-    --bs-body-bg: #F8F9FA;    /* Fundo Claro para Leitura */
+    --bs-primary: #C8102E;
+    --bs-primary-hover: #A00C23;
+    --bs-success: #008C45;
+    --bs-success-hover: #006B34;
+    --bs-warning: #FFC107;
+    --bs-warning-dark: #D39E00;
+    --bs-secondary: #F4EBD0;
+    --bs-dark: #1A1A1A;
+    --bs-body-bg: #F8F9FA;
     
-    /* Fontes */
-    --font-titulo: 'Playfair Display', serif;
-    --font-corpo: 'Poppins', sans-serif;
+    --font-titulo: 'Playfair Display', Georgia, serif;
+    --font-corpo: 'Poppins', system-ui, -apple-system, sans-serif;
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 25px rgba(0, 0, 0, 0.12);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     font-family: var(--font-corpo);
     background-color: var(--bs-body-bg);
+    color: var(--bs-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Títulos Artesanais */
-h1, h2, h3, .navbar-brand {
+h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: var(--font-titulo);
     font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
-/* Navbar Customizada */
 .navbar-bella-massa {
-    background-color: var(--bs-primary);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, var(--bs-primary) 0%, #A00C23 100%);
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.2);
+    padding: 0.85rem 1rem;
+    border-bottom: 3px solid var(--bs-secondary);
 }
 
-.navbar-bella-massa .navbar-brand,
-.navbar-bella-massa .nav-link {
-    color: white !important;
+.navbar-bella-massa .navbar-brand {
+    color: #FFFFFF !important;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
 }
 
-/* Cards Premium */
+.navbar-bella-massa .navbar-brand i {
+    color: var(--bs-secondary);
+}
+
+.navbar-bella-massa .nav-link,
+.navbar-bella-massa .navbar-text {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500;
+}
+
 .card-bella {
     border: none;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow: hidden; /* Para a borda lateral */
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    overflow: hidden;
 }
 
 .card-bella:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Bordas Laterais Temáticas no Card */
-.card-pedido-pendente { border-left: 5px solid var(--bs-warning); }
-.card-pedido-forno { border-left: 5px solid var(--bs-primary); }
-.card-pedido-pronto { border-left: 5px solid var(--bs-success); }
+.card-pedido-pendente { 
+    border-left: 6px solid var(--bs-warning) !important; 
+}
 
-/* Botões Customizados */
+.card-pedido-forno { 
+    border-left: 6px solid var(--bs-primary) !important; 
+}
+
+.card-pedido-pronto { 
+    border-left: 6px solid var(--bs-success) !important; 
+}
+
 .btn-bella {
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.8px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-bella:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.btn-bella:active {
+    transform: translateY(0);
+}
+
+.btn-primary { 
+    background-color: var(--bs-primary); 
+    color: #FFFFFF;
+}
+
+.btn-primary:hover, .btn-primary:focus { 
+    background-color: var(--bs-primary-hover); 
+}
+
+.btn-success { 
+    background-color: var(--bs-success); 
+    color: #FFFFFF;
+}
+
+.btn-success:hover, .btn-success:focus { 
+    background-color: var(--bs-success-hover); 
+}
+
+.btn-secondary {
+    background-color: var(--bs-secondary);
+    color: var(--bs-primary);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #E2D6B5;
+    color: var(--bs-primary-hover);
+}
+
+.badge-status {
+    padding: 8px 14px;
     border-radius: 30px;
-    padding: 10px 25px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.icon-status {
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+body.bg-dark, 
+body[style*="background-color: #121212"] {
+    background-color: #121212 !important;
+}
+
+.bg-dark .card-bella {
+    background-color: #1E1E1E !important;
+    color: #FFFFFF;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bg-dark .card-bella .text-muted {
+    color: #A0A0A0 !important;
+}
+
+.modal-content.card-bella {
+    border-radius: 20px;
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    font-family: var(--font-corpo);
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.8rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    padding: 14px 16px;
 }
 
-.btn-primary { background-color: var(--bs-primary); border-color: var(--bs-primary); }
-.btn-success { background-color: var(--bs-success); border-color: var(--bs-success); }
-
-/* Badges de Status Modernos */
-.badge-status {
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
+.table tbody td {
+    padding: 14px 16px;
 }
 
-/* Ícones Grandes */
-.icon-status {
-    font-size: 2rem;
-    margin-right: 15px;
+#painel-fechamento .card-bella {
+    background: linear-gradient(145deg, var(--bs-primary) 0%, #900A20 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#painel-fechamento .text-secondary {
+    color: var(--bs-secondary) !important;
+}
+
+#painel-fechamento .btn-secondary {
+    font-size: 0.9rem;
+    padding: 14px 20px;
+}
+
+@keyframes pulseAlert {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fa-beat-fade {
+    animation: pulseAlert 2s infinite ease-in-out;
 }
